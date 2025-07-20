@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(180deg, #0a1a2f 0%, #1a2a3f 100%);
+  color: #eaf6ff;
+}
+.hero {
+  text-align: center;
+  padding: 48px 16px 24px 16px;
+  background: linear-gradient(180deg, #0a1a2f 0%, #1a2a3f 100%);
+}
+.logo {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: 2.5rem;
+  color: #00eaff;
+  margin-bottom: 0.5rem;
+}
+h2 {
+  font-size: 1.5rem;
+  color: #eaf6ff;
+  margin-bottom: 1rem;
+}
+.tagline {
+  font-size: 1.1rem;
+  color: #b3e0ff;
+  margin-bottom: 2rem;
+}
+.cta {
+  display: inline-block;
+  background: #00eaff;
+  color: #0a1a2f;
+  font-weight: bold;
+  padding: 12px 32px;
+  border-radius: 32px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.features {
+  max-width: 600px;
+  margin: 32px auto;
+  background: #14243a;
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.features h3 {
+  color: #00eaff;
+  margin-bottom: 1rem;
+}
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.features li {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  padding-left: 1.2em;
+  position: relative;
+}
+.features li:before {
+  content: '✔';
+  color: #00eaff;
+  position: absolute;
+  left: 0;
+}
+.screenshots {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.screenshots img {
+  width: 160px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.ai {
+  max-width: 600px;
+  margin: 32px auto;
+  background: #14243a;
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.ai h3 {
+  color: #00eaff;
+  margin-bottom: 1rem;
+}
+.legal {
+  max-width: 600px;
+  margin: 32px auto;
+  background: #14243a;
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.legal h3 {
+  color: #00eaff;
+  margin-bottom: 0.5rem;
+}
+footer {
+  text-align: center;
+  padding: 32px 16px 16px 16px;
+  color: #b3e0ff;
+  font-size: 1rem;
+}
+@media (max-width: 700px) {
+  .features, .ai, .legal {
+    padding: 16px 8px;
+    border-radius: 12px;
+  }
+  .screenshots img {
+    width: 100px;
+  }
+}

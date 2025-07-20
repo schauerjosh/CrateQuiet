@@ -1,0 +1,76 @@
+{
+  "expo": {
+    "name": "CrateQuiet: Stop Dog Whining",
+    "slug": "cratequiet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#00FFFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cratequiet.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "CrateQuiet needs microphone access to detect your dog's barks and whines for effective crate training.",
+        "NSCameraUsageDescription": "CrateQuiet uses the camera to capture training progress photos and videos.",
+        "NSPhotoLibraryUsageDescription": "CrateQuiet needs photo library access to save training progress images.",
+        "UIBackgroundModes": ["audio", "background-processing", "background-fetch"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#00FFFF"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.cratequiet.app",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.VIBRATE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.FOREGROUND_SERVICE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow CrateQuiet to access your microphone to detect barks and whines."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow CrateQuiet to use your camera to capture training progress photos."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow CrateQuiet to save training progress photos to your photo library.",
+          "savePhotosPermission": "Allow CrateQuiet to save training progress photos to your photo library."
+        }
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cratequiet-training-app"
+      }
+    }
+  }
+}
