@@ -1,5 +1,6 @@
 import { Audio } from 'expo-av';
 import * as Haptics from 'expo-haptics';
+import * as FileSystem from 'expo-file-system';
 import { StorageService } from '../utils/storage';
 import { BarkEvent, UserSettings } from '../types';
 
@@ -19,6 +20,7 @@ export class AudioService {
   private responseSound: Audio.Sound | null = null;
   private intervalId: NodeJS.Timeout | null = null;
   private waveformData: number[] = [];
+  private customSoundUri: string | null = null;
   
   constructor() {
     this.setupAudio();
@@ -64,32 +66,7 @@ export class AudioService {
       this.sensitivity = settings.sensitivity;
 
       this.recording = new Audio.Recording();
-      await this.recording.prepareToRecordAsync({
-        android: {
-          extension: '.m4a',
-          outputFormat: Audio.RECORDING_OUTPUT_FORMAT_MPEG_4,
-          audioEncoder: Audio.RECORDING_AUDIO_ENCODER_AAC,
-          sampleRate: 44100,
-          numberOfChannels: 1,
-          bitRate: 128000,
-        },
-        ios: {
-          extension: '.m4a',
-          outputFormat: Audio.RECORDING_OUTPUT_FORMAT_MPEG4AAC,
-          audioQuality: Audio.RECORDING_AUDIO_QUALITY_HIGH,
-          sampleRate: 44100,
-          numberOfChannels: 1,
-          bitRate: 128000,
-          linearPCMBitDepth: 16,
-          linearPCMIsBigEndian: false,
-          linearPCMIsFloat: false,
-        },
-        web: {
-          mimeType: 'audio/webm',
-          bitsPerSecond: 128000,
-        },
-      });
-
+      await this.recording.prepareToRecordAsync(Audio.RecordingOptionsPresets.HIGH_QUALITY);
       await this.recording.startAsync();
       this.isListening = true;
 
@@ -245,6 +222,48 @@ export class AudioService {
     if (this.responseSound) {
       await this.responseSound.unloadAsync();
       this.responseSound = null;
+    }
+  }
+
+  public async recordCustomSound(): Promise<string | null> {
+    try {
+      const recording = new Audio.Recording();
+      await recording.prepareToRecordAsync(Audio.RecordingOptionsPresets.HIGH_QUALITY);
+      await recording.startAsync();
+      // Wait for user to stop recording externally
+      return new Promise((resolve, reject) => {
+        setTimeout(async () => {
+          try {
+            await recording.stopAndUnloadAsync();
+            const uri = recording.getURI();
+            if (uri) {
+              // Move to app storage
+              const dest = FileSystem.documentDirectory + 'custom-response.m4a';
+              await FileSystem.moveAsync({ from: uri, to: dest });
+              this.customSoundUri = dest;
+              resolve(dest);
+            } else {
+              resolve(null);
+            }
+          } catch (err) {
+            reject(err);
+          }
+        }, 3000); // 3 seconds max recording
+      });
+    } catch (error) {
+      console.error('Error recording custom sound:', error);
+      return null;
+    }
+  }
+
+  public async playCustomSound(): Promise<void> {
+    try {
+      if (!this.customSoundUri) return;
+      const { sound } = await Audio.Sound.createAsync({ uri: this.customSoundUri });
+      await sound.playAsync();
+      setTimeout(() => sound.unloadAsync(), 5000);
+    } catch (error) {
+      console.error('Error playing custom sound:', error);
     }
   }
 }
