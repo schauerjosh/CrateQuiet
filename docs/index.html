@@ -2,47 +2,206 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>CrateQuiet – AI Dog Training & Crate Training App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CrateQuiet: The AI-powered dog crate training app. Stop whining, track progress, and create a calm den for your dog. Available on iOS.">
-  <meta name="keywords" content="dog crate training, bark detection, dog app, AI dog training, cratequiet, pet app, dog monitoring, dog progress, dog privacy, dog analytics">
-  <title>CrateQuiet – Stop Dog Whining | AI Crate Training App</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="CrateQuiet is an AI dog training app. Stop dog whining with real-time bark detection and voice analysis. Track behavior and progress, with all data stored locally on your device.">
+  <meta name="keywords" content="AI dog training app, crate training app, stop dog whining, dog bark detection, dog behavior tracking, pet training">
+  <!-- Optional OpenGraph metadata for social shares -->
+  <meta property="og:title" content="CrateQuiet – AI Dog Training & Crate Training App">
+  <meta property="og:description" content="Join CrateQuiet – AI dog training app to stop whining with real-time bark detection and behavior tracking. Privacy-first crate training on iOS.">
+  <style>
+    /* Base and hero section styling */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0a1a2f 0%, #1a2a3f 100%);
+      color: #eaf6ff;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00EAFF;
+      margin-bottom: 0.5rem;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%    { transform: translateY(-10px); }
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      color: #eaf6ff;
+      margin: 0.5rem 0 1.5rem;
+    }
+    .hero p.tagline {
+      font-size: 1.1rem;
+      color: #b3e0ff;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+    .hero .logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      animation: spin 10s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    /* Waitlist form styling */
+    .waitlist {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .waitlist input {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 32px 0 0 32px;
+      font-size: 1rem;
+      outline: none;
+    }
+    .waitlist button.cta {
+      padding: 12px 32px;
+      margin-left: -4px;
+      border-radius: 0 32px 32px 0;
+      background: #00EAFF;
+      color: #0a1a2f;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .waitlist button.cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    /* Feature sections */
+    .features, .ai, .privacy {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #14243a;
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    .features h2, .ai h2, .privacy h2 {
+      color: #00EAFF;
+      margin-bottom: 1rem;
+    }
+    .features ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+    .features li {
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .features li:before {
+      content: '✔';
+      color: #00EAFF;
+      position: absolute;
+      left: 0;
+    }
+    /* Screenshot gallery */
+    .screenshots {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .screenshots img {
+      width: 200px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .screenshots img:hover {
+      transform: scale(1.05);
+    }
+    /* Section text */
+    .ai p, .privacy p {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 20px 16px;
+      color: #b3e0ff;
+      font-size: 0.9rem;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      .features, .ai, .privacy {
+        padding: 24px 16px;
+        border-radius: 16px;
+      }
+      .screenshots {
+        flex-direction: column;
+        align-items: center;
+      }
+      .screenshots img {
+        width: 60%;
+        max-width: 240px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
-    <img src="assets/icons/Icon-Crate.png" alt="CrateQuiet Logo" class="logo">
+    <img src="assets/icons/Icon-Crate.png" alt="CrateQuiet logo – AI dog training app" class="logo">
     <h1>CrateQuiet</h1>
-    <h2>Stop Dog Whining. Train Smarter.</h2>
-    <p class="tagline">AI-powered crate training, real-time bark detection, and progress tracking for a happier dog.</p>
-    <a href="#download" class="cta">Download on the App Store</a>
+    <h2>AI Dog Training App for Crate Training</h2>
+    <p class="tagline">
+      Say goodbye to barking and whining. CrateQuiet’s AI-driven training uses real-time bark detection and voice analysis to calm your dog. Track behavior and progress over time with a privacy-first design that keeps all data on your device.
+    </p>
+    <form class="waitlist">
+      <input type="email" placeholder="Your email for early access" aria-label="Email address" required>
+      <button type="submit" class="cta">Join Waitlist</button>
+    </form>
   </header>
 
   <section class="features">
-    <h3>Why CrateQuiet?</h3>
+    <h2>Key Features</h2>
     <ul>
-      <li>Real-time bark & whine detection (AI optimized)</li>
-      <li>Smart vibration & sound feedback</li>
-      <li>Progress dashboard & analytics</li>
-      <li>Photo & note tracking for every session</li>
-      <li>Privacy-first: all data stays on your device</li>
-      <li>Premium features: multi-dog support, advanced analytics</li>
+      <li>Real-time bark & whine detection (AI-powered)</li>
+      <li>Gentle sound and vibration feedback to calm your dog</li>
+      <li>Progress dashboard & analytics for behavior tracking</li>
+      <li>Photo & note logging for each training session</li>
+      <li>Privacy-first: all audio and data stay on your device</li>
+      <li>Premium: Multi-dog support & advanced stats</li>
     </ul>
     <div class="screenshots">
-      <img src="assets/screenshots/Screenshot-BarkDetection-6.7inch.png" alt="Bark Detection Screenshot">
-      <img src="assets/screenshots/Screenshot-ProgressDashboard-6.7inch.png" alt="Progress Dashboard Screenshot">
+      <img src="assets/screenshots/Screenshot-BarkDetection-6.7inch.png" alt="CrateQuiet app screenshot – bark detection in action">
+      <img src="assets/screenshots/Screenshot-ProgressDashboard-6.7inch.png" alt="CrateQuiet app screenshot – behavior and progress dashboard">
     </div>
   </section>
 
   <section class="ai">
-    <h3>AI Optimized for Your Dog</h3>
-    <p>CrateQuiet uses advanced AI to distinguish real barks and whines from background noise, ensuring only meaningful alerts and corrections. The app adapts to your dog’s unique vocal patterns for smarter, more effective training.</p>
+    <h2>AI Bark Detection & Voice Analysis</h2>
+    <p>
+      CrateQuiet’s advanced AI engine learns your dog’s unique vocal patterns over time. It reliably distinguishes your dog’s barks and whines from background noise, so you only get alerts for genuine behavior:contentReference[oaicite:3]{index=3}. This smart training adaptation means the app gets more effective the more you use it, giving you a tailor-made training experience for your pet.
+    </p>
   </section>
 
-  <section class="legal">
-    <h3>Terms & Conditions</h3>
-    <p>By using CrateQuiet, you agree to use the app responsibly and for personal pet training only. The app does not share or upload your data. All features are subject to change and may require a premium subscription.</p>
-    <h3>Privacy Policy</h3>
-    <p>CrateQuiet stores all audio and training data locally on your device. No data is uploaded or shared with third parties. You can delete your data at any time from the app settings.</p>
+  <section class="privacy">
+    <h2>Privacy-First Design</h2>
+    <p>
+      We prioritize your privacy. CrateQuiet stores all audio recordings and training data locally on your iPhone:contentReference[oaicite:4]{index=4}. Nothing is ever uploaded or shared—so you can train your dog confidently, knowing their data stays private on your device.
+    </p>
   </section>
 
   <footer>
