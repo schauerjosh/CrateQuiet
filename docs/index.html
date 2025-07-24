@@ -45,7 +45,7 @@
 
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333333; /* Dark gray for text on light background */
             background: #ffffff; /* Bright white background */
@@ -241,26 +241,43 @@
             border-radius: 30px;
             padding: 10px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-            /* Removed transform to simplify and ensure visibility */
-            /* transform: perspective(1000px) rotateY(-5deg); */
             transition: transform 0.3s ease;
             overflow: hidden; /* Ensure content stays within bounds */
         }
 
         .phone-mockup:hover {
             transform: scale(1.05); /* Simpler hover effect */
+        }        .phone-mockup img {
+            width: 100%; /* Ensure image fills its container */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 200px; /* Adjusted limit height on desktop */
+            display: block;
+            margin: 0 auto; /* Center the image */
         }
 
-        .feature-card img {
-            width: 100%;
-            max-width: 250px; /* Limit image width within the card */
-            height: auto; /* Allow height to adjust proportionally */
+        @media (max-width: 768px) {
+            .phone-mockup img {
+                max-width: 150px; /* Adjusted smaller max-width for mobile phone mockups */
+                max-height: 150px; /* Adjusted smaller max-height for mobile phone mockups */
+            }
+        }
+
+        .feature-screenshot {
+            max-width: 100%; /* Ensure image fits within feature card */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 120px; /* Adjusted limit height for feature card images on desktop */
             object-fit: contain;
             border-radius: 10px;
             margin-top: 1rem;
             display: block;
             margin-left: auto; /* Center the image */
             margin-right: auto; /* Center the image */
+        }
+
+        @media (max-width: 768px) {
+            .feature-screenshot {
+                max-height: 80px; /* Adjusted smaller max-height for mobile feature images */
+            }
         }
 
         /* Problem/Solution Section */
@@ -279,12 +296,12 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #ffffff; /* White for headings */
+            color: #333333; /* Dark text for headings */
         }
 
         .section-header p {
             font-size: 1.2rem;
-            color: #a0a0a0;
+            color: #555555;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -315,7 +332,7 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #333333; /* Dark text for headings */
         }
 
         .solution-grid {
@@ -349,7 +366,7 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #333333; /* Dark text for headings */
         }
 
         /* Features Section */
@@ -396,11 +413,11 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #333333; /* Dark text for headings */
         }
 
         .feature-card p {
-            color: #a0a0a0;
+            color: #555555;
             line-height: 1.7;
         }
 
@@ -441,11 +458,11 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #333333; /* Dark text for headings */
         }
 
         .step p {
-            color: #a0a0a0;
+            color: #555555;
             line-height: 1.7;
         }
 
@@ -511,11 +528,11 @@
         .author-info h4 {
             font-weight: 600;
             margin-bottom: 0.2rem;
-            color: #ffffff;
+            color: #333333; /* Dark text for headings */
         }
 
         .author-info p {
-            color: #a0a0a0;
+            color: #555555;
             font-size: 0.9rem;
         }
 
@@ -588,13 +605,13 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #333333; /* Dark text for headings */
         }
 
         .final-cta p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #a0a0a0;
+            color: #555555;
         }
 
         .email-signup {
@@ -646,16 +663,26 @@
 
         .footer-content {
             display: flex;
-            justify-content: space-bet        .feature-card img {
-            width: 100%;
-            max-width: 250px; /* Limit image width within the card */
-            height: auto; /* Allow height to adjust proportionally */
-            object-fit: contain;
-            border-radius: 10px;
-            margin-top: 1rem;
-            display: block;
-            margin-left: auto; /* Center the image */
-            margin-right: auto; /* Center the image */
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #555555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00d4ff;
         }
 
         /* Responsive Design */
@@ -696,7 +723,7 @@
             }
 
             .phone-mockup img {
-                width: 200px;
+                max-width: 120px; /* Smaller max-width for mobile phone mockups */
             }
 
             .section-header h2 {
@@ -717,8 +744,7 @@
             }
 
             .feature-card img {
-                height: auto; /* Allow height to adjust proportionally */
-                max-height: 200px; /* Max height for mobile feature images */
+                max-width: 100px; /* Smaller max-width for mobile feature images */
             }
 
             .problem-grid, .solution-grid, .steps-container, .testimonials-grid {
@@ -735,7 +761,8 @@
             }
         }
 
-        /* Animations */ @keyframes fadeInUp {
+        /* Animations */ 
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -865,7 +892,7 @@
                 <div class="solution-card">
                     <div class="icon">🎯</div>
                     <h3>Smart Bark Detection</h3>
-                    <p>AI learns your dog's unique voice patterns, filtering out false alarms and responding only to genuine barks and whines.</p>
+                    <p>AI instantly recognizes your dog's barks and whines while learning to ignore background noise, filtering out false alarms and responding only to genuine barks and whines.</p>
                 </div>
                 <div class="solution-card">
                     <div class="icon">💝</div>
@@ -898,14 +925,14 @@
                 <div class="feature-card">
                     <div class="feature-icon">🧠</div>
                     <h3>AI-Powered Recognition</h3>
-                    <p>Advanced machine learning algorithms adapt to your dog\"s unique vocal patterns, ensuring accurate detection while filtering out household noises, other pets, and false triggers.</p>
+                    <p>Advanced machine learning algorithms adapt to your dog's unique vocal patterns, ensuring accurate detection while filtering out household noises, other pets, and false triggers.</p>
                     <img src="assets/images/IMG_0201.PNG" alt="CrateQuiet Monitoring Active" class="feature-screenshot">
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🎵</div>
                     <h3>Customizable Feedback</h3>
-                    <p>Choose from various gentle sounds, nature noises, or calming tones. Adjust vibration intensity to find what works best for your dog\"s temperament and sensitivity.</p>
+                    <p>Choose from various gentle sounds, nature noises, or calming tones. Adjust vibration intensity to find what works best for your dog's temperament and sensitivity.</p>
                     <img src="assets/images/IMG_0202.PNG" alt="CrateQuiet Bark Detected" class="feature-screenshot">
                 </div>
 
@@ -974,8 +1001,8 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 style="color: white;">Real Results from Real Dog Parents</h2>
-                <p style="color: #e2e8f0;">Join thousands of satisfied pet owners who've transformed their dogs' behavior with CrateQuiet.</p>
+                <h2>Real Results from Real Dog Parents</h2>
+                <p>Join thousands of satisfied pet owners who've transformed their dogs' behavior with CrateQuiet.</p>
             </div>
 
             <div class="testimonials-grid">
@@ -1157,7 +1184,7 @@
                     <li><a href="#support">Support</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <p style="color: #94a3b8;">&copy; 2025 CrateQuiet. All rights reserved.</p>
+                <p>&copy; 2025 CrateQuiet. All rights reserved.</p>
             </div>
         </div>
     </footer>
