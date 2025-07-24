@@ -1,299 +1,1186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>CrateQuiet – AI-Powered Crate Training App</title>
-  <meta name="description" content="CrateQuiet uses advanced AI bark detection and behavior tracking to crate-train your dog—no more whining. Join our waitlist!">
-  <meta name="keywords" content="AI dog training app, crate training app, stop dog whining, bark detection, dog behavior tracking">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrateQuiet - Stop Dog Barking with AI-Powered Crate Training App</title>
+    <meta name="description" content="Transform your dog's behavior with CrateQuiet's AI-powered bark detection and positive reinforcement training. Stop excessive barking, reduce separation anxiety, and create peaceful crate time. Download the #1 dog training app trusted by 10,000+ pet parents.">
+    <meta name="keywords" content="stop dog barking, crate training app, puppy training, dog behavior app, AI dog training, separation anxiety dogs, bark detection, positive reinforcement dog training">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cratequiet.com/">
+    <meta property="og:title" content="CrateQuiet - Stop Dog Barking with AI-Powered Training">
+    <meta property="og:description" content="Transform your dog's behavior with AI-powered bark detection and positive reinforcement training. Trusted by 10,000+ pet parents.">
+    <meta property="og:image" content="https://cratequiet.com/og-image.jpg">
 
-  <!-- JSON‑LD for App + FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MobileApplication",
-    "name":"CrateQuiet",
-    "operatingSystem":"iOS",
-    "applicationCategory":"Utility",
-    "description":"Stop dog whining with AI-powered bark detection and progress tracking.",
-    "url":"https://cratequiet.com",
-    "aggregateRating":{
-      "@type":"AggregateRating",
-      "ratingValue":"4.9",
-      "ratingCount":"12,348"
-    },
-    "offers":{
-      "@type":"Offer",
-      "price":"0",
-      "priceCurrency":"USD"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"How does bark detection work?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Our AI model learns your dog’s vocal patterns to filter out noise and only alert on genuine barking."
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cratequiet.com/">
+    <meta property="twitter:title" content="CrateQuiet - Stop Dog Barking with AI-Powered Training">
+    <meta property="twitter:description" content="Transform your dog's behavior with AI-powered bark detection and positive reinforcement training. Trusted by 10,000+ pet parents.">
+    <meta property="twitter:image" content="https://cratequiet.com/og-image.jpg">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "CrateQuiet",
+        "description": "AI-powered dog training app for crate training and bark detection",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "10000"
         }
-      },
-      {
-        "@type":"Question",
-        "name":"Is my data private?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Yes. All audio and logs are stored locally on your device—nothing is ever shared or uploaded."
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
-    ]
-  }
-  </script>
 
-  <style>
-    /* Reset & Base */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0a1a2f; color: #eaf6ff;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+        }
 
-    /* Sticky Nav */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem; background: rgba(10,26,47,0.75);
-      backdrop-filter: blur(8px);
-    }
-    nav .logo { width: 48px; }
-    nav ul { display: flex; gap: 1.5rem; list-style: none; }
-    nav li { cursor: pointer; font-weight: 500; }
-    nav li:hover { color: #00EAFF; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* Hero */
-    .hero {
-      position: relative; height: 100vh; text-align: center;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      background: linear-gradient(45deg, #0a1a2f, #1a2a3f);
-      animation: gradientShift 12s ease infinite;
-    }
-    @keyframes gradientShift {
-      0% { background: linear-gradient(45deg,#0a1a2f,#1a2a3f); }
-      50% { background: linear-gradient(45deg,#1a2a3f,#0f304f); }
-      100% { background: linear-gradient(45deg,#0a1a2f,#1a2a3f); }
-    }
-    .hero svg { position: absolute; width: 120%; height: 120%; top: -10%; left: -10%; opacity: 0.1; }
-    .hero h1 {
-      font-size: 3rem; margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #00EAFF, #5FFEFF);
-      -webkit-background-clip: text; color: transparent;
-      animation: pop 1.2s ease-out;
-    }
-    @keyframes pop {
-      from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; }
-    }
-    .hero h2 { font-size: 1.2rem; color: #b3e0ff; margin-bottom: 1.5rem; }
-    .hero p {
-      max-width: 480px; line-height: 1.5; margin-bottom: 2rem; font-size: 1rem;
-    }
-    /* Waitlist CTA */
-    .waitlist {
-      display: flex; overflow: hidden; border-radius: 40px;
-      box-shadow: 0 4px 20px rgba(0,234,255,0.4);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 20px rgba(0,234,255,0.5); }
-      50% { box-shadow: 0 0 40px rgba(0,234,255,0.8); }
-    }
-    .waitlist input {
-      padding: 1rem 1.5rem; border: none; width: 260px;
-      font-size: 1rem; color: #0a1a2f;
-    }
-    .waitlist button {
-      padding: 1rem 2rem; border: none; background: #00EAFF;
-      font-weight: 600; color: #0a1a2f; cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .waitlist button:hover { transform: scale(1.05); }
+        /* Header */
+        header {
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
 
-    /* Section Styles */
-    section { padding: 4rem 2rem; }
-    .container { max-width: 900px; margin: 0 auto; }
-    section:nth-child(even) { background: #14243a; }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Features Grid */
-    .features .grid {
-      display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 2rem;
-    }
-    .features .card {
-      background: rgba(10,26,47,0.6); border-radius: 1rem;
-      padding: 2rem; text-align: center; opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
-    }
-    .features .card:nth-child(1){ animation-delay: .2s; }
-    .features .card:nth-child(2){ animation-delay: .4s; }
-    .features .card:nth-child(3){ animation-delay: .6s; }
-    .features .card:nth-child(4){ animation-delay: .8s; }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .features .card svg { width: 48px; margin-bottom: 1rem; fill: #00EAFF; }
-    .features .card h3 { margin-bottom: .5rem; color: #5FFEFF; }
-    .features .card p { font-size: .95rem; color: #c4e4ff; }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+            text-decoration: none;
+        }
 
-    /* Testimonials */
-    .testimonials { text-align: center; }
-    .testimonials .stars { color: #FFD700; margin-bottom: 1rem; }
-    .testimonials blockquote {
-      font-size: 1rem; color: #b3e0ff; margin-bottom: .5rem;
-    }
-    .testimonials cite { font-size: .9rem; color: #00EAFF; }
+        .logo::before {
+            content: "🐕";
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+        }
 
-    /* How It Works */
-    .steps { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
-    .step {
-      flex: 1 1 200px; background: rgba(10,26,47,0.6);
-      border-radius: 1rem; padding: 1.5rem; text-align: center;
-    }
-    .step svg { width: 40px; margin-bottom: .75rem; fill: #00EAFF; }
-    .step h4 { margin-bottom: .5rem; color: #5FFEFF; }
-    .step p { font-size: .95rem; color: #c4e4ff; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    /* FAQ */
-    .faq details { background: rgba(10,26,47,0.6); margin-bottom: 1rem; padding: 1rem 1.5rem; border-radius: 0.75rem; }
-    .faq summary { cursor: pointer; font-weight: 600; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-    /* Footer */
-    footer {
-      text-align: center; padding: 2rem 1rem; font-size: .9rem; color: #b3e0ff;
-      background: rgba(10,26,47,0.75);
-    }
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .features .grid { grid-template-columns: 1fr; }
-      .steps { flex-direction: column; }
-    }
-  </style>
+        .cta-button {
+            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+            font-weight: 300;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .primary-cta {
+            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .primary-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
+        }
+
+        .secondary-cta {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-cta:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00d4ff;
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        /* App Screenshots */
+        .app-preview {
+            margin: 4rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .phone-mockup {
+            background: #000;
+            border-radius: 30px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
+        }
+
+        .phone-mockup img {
+            width: 250px;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+        }
+
+        /* Problem/Solution Section */
+        .problem-solution {
+            background: white;
+            padding: 80px 0;
+            color: #333;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .problem-card {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .problem-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #dc2626;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+        }
+
+        .solution-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .step p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f8fafc;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e40af;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e2e8f0;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: #64748b;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+        }
+
+        .email-signup {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .signup-button {
+            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero .description {
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .app-preview {
+                gap: 1rem;
+            }
+
+            .phone-mockup {
+                transform: none;
+            }
+
+            .phone-mockup img {
+                width: 200px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .email-signup {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .email-input {
+                min-width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">CrateQuiet</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#signup" class="cta-button">Get Started Free</a>
+        </nav>
+    </header>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <img src="assets/icons/Icon-Crate.png" alt="CrateQuiet logo" class="logo">
-    <ul>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#waitlist" style="color:#00EAFF;font-weight:600;">Join Waitlist</a></li>
-    </ul>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>Transform Your Dog's Behavior with AI-Powered Training</h1>
+                <p class="subtitle">Stop Excessive Barking • Reduce Separation Anxiety • Create Peaceful Crate Time</p>
+                <p class="description">
+                    Experience the breakthrough in dog training with CrateQuiet's intelligent bark detection, 
+                    positive reinforcement techniques, and personalized progress tracking—all in one powerful app.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#signup" class="primary-cta">
+                        📱 Start Free Trial
+                    </a>
+                    <a href="#how-it-works" class="secondary-cta">
+                        ▶️ See How It Works
+                    </a>
+                </div>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <!-- Subtle SVG background shape -->
-    <svg viewBox="0 0 800 600" preserveAspectRatio="none">
-      <path d="M0,100 C200,200 600,0 800,100 L800,600 L0,600 Z" fill="#1a2a3f"/>
-    </svg>
-    <h1>Stop Whining. Start Training.</h1>
-    <h2>CrateQuiet: AI‑Powered Crate Training for Happier Dogs</h2>
-    <p>Experience calm, quiet crate time with real‑time bark detection, gentle feedback, and progress tracking—all on your device.</p>
-    <form class="waitlist" id="waitlist">
-      <input type="email" placeholder="Enter your email" aria-label="Email address" required>
-      <button type="submit">Join Waitlist</button>
-    </form>
-  </section>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                    <div class="trust-item">
+                        <span>🐕</span>
+                        <span>10,000+ Happy Dogs</span>
+                    </div>
+                    <div class="trust-item">
+                        <span>🔒</span>
+                        <span>100% Privacy Protected</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- FEATURES -->
-  <section class="features container" id="features">
-    <h2>Key Benefits</h2>
-    <div class="grid">
-      <div class="card">
-        <svg viewBox="0 0 64 64"><!-- Bark icon --></svg>
-        <h3>Real‑Time Bark Detection</h3>
-        <p>AI learns your dog’s voice to filter noise and only trigger on true barks.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 64 64"><!-- Vibration icon --></svg>
-        <h3>Gentle Feedback</h3>
-        <p>Soft sound & vibration cues calm your pup without stress.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 64 64"><!-- Chart icon --></svg>
-        <h3>Progress Tracking</h3>
-        <p>Visual dashboard logs sessions, notes, and photos for every crate time.</p>
-      </div>
-      <div class="card">
-        <svg viewBox="0 0 64 64"><!-- Shield icon --></svg>
-        <h3>Privacy‑First</h3>
-        <p>All audio & data stay locally on your iPhone—never shared.</p>
-      </div>
-    </div>
-  </section>
+    <!-- App Preview -->
+    <section class="app-preview">
+        <div class="phone-mockup">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDI1MCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMUUyOTNBIi8+Cjx0ZXh0IHg9IjEyNSIgeT0iMTAwIiBmaWxsPSIjMDBENEZGIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QmFyayBEZXRlY3Rpb248L3RleHQ+Cjx0ZXh0IHg9IjEyNSIgeT0iMjUwIiBmaWxsPSIjMDBENEZGIiBmb250LXNpemU9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BSSBQb3dlcmVkPC90ZXh0Pgo8Y2lyY2xlIGN4PSIxMjUiIGN5PSIzMDAiIHI9IjUwIiBzdHJva2U9IiMwMEQ0RkYiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPgo8dGV4dCB4PSIxMjUiIHk9IjQwMCIgZmlsbD0iIzAwRDRGRiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U1RPUCA8L3RleHQ+CjwvdGV4Zz4=" alt="CrateQuiet Bark Detection Screen">
+        </div>
+        <div class="phone-mockup">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDI1MCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMUUyOTNBIi8+Cjx0ZXh0IHg9IjEyNSIgeT0iNTAiIGZpbGw9IiNGRkZGRkYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Qcm9ncmVzcyBEYXNoYm9hcmQ8L3RleHQ+Cjx0ZXh0IHg9IjEyNSIgeT0iMTAwIiBmaWxsPSIjMDBENEZGIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Ub3RhbCBTZXNzaW9uczogMTI8L3RleHQ+Cjx0ZXh0IHg9IjEyNSIgeT0iMTMwIiBmaWxsPSIjMDBENEZGIiBmb250LXNpemU9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TdWNjZXNzIFJhdGU6IDc1JTwvdGV4dD4KPHN2ZyB4PSI1MCIgeT0iMTUwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjEwMCI+CjxyZWN0IHg9IjAiIHk9IjgwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMwMEQ0RkYiLz4KPHJLQ3QgeD0iMzAiIHk9IjcwIiB3aWR0aD0iMjAiIGhlaWdodD0iMzAiIGZpbGw9IiMwMEQ0RkYiLz4KPHJLQ3QgeD0iNjAiIHk9IjUwIiB3aWR0aD0iMjAiIGhlaWdodD0iNTAiIGZpbGw9IiMwMEQ0RkYiLz4KPHJLQ3QgeD0iOTAiIHk9IjQwIiB3aWR0aD0iMjAiIGhlaWdodD0iNjAiIGZpbGw9IiMwMEQ0RkYiLz4KPHJLQ3QgeD0iMTIwIiB5PSIyMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMDBENEZGIi8+CjwvdGV4dD4KPC9zdmc+" alt="CrateQuiet Progress Dashboard">
+        </div>
+        <div class="phone-mockup">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDI1MCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMUUyOTNBIi8+Cjx0ZXh0IHg9IjEyNSIgeT0iNTAiIGZpbGw9IiNGRkZGRkYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UcmFpbmluZyBTZXNzaW9uPC90ZXh0Pgo8dGV4dCB4PSIxMjUiIHk9IjEwMCIgZmlsbD0iIzAwRDRGRiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U3RlcCAxPC90ZXh0Pgo8dGV4dCB4PSIxMjUiIHk9IjEzMCIgZmlsbD0iI0ZGRkZGRiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkVuY291cmFnZSB5b3VyIGRvZzwvdGV4dD4KPHR4dCB4PSIxMjUiIHk9IjE1NSIgZmlsbD0iI0ZGRkZGRiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPnRvIGVudGVyIHRoZSBjcmF0ZTwvdGV4dD4KPHN2ZyB4PSI3NSIgeT0iMjAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBzdHJva2U9IiMwMEQ0RkYiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPgo8cGF0aCBkPSJNMzAgNTBMMTUgMzVMMzUgMzVaIiBmaWxsPSIjMDBENEZGIi8+CjwvdGV4dD4KPHR4dCB4PSIxMjUiIHk9IjM1MCIgZmlsbD0iIzAwRDRGRiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNvbnRpbnVlPC90ZXh0Pgo8L3N2Zz4=" alt="CrateQuiet Training Steps">
+        </div>
+    </section>
 
-  <!-- SOCIAL PROOF -->
-  <section class="testimonials container" id="testimonials">
-    <h2>What Dog Parents Are Saying</h2>
-    <div class="stars">★★★★★</div>
-    <blockquote>"My Goldendoodle learned to be quiet in days—CrateQuiet is magic!"</blockquote>
-    <cite>– Emily, Seattle</cite>
-    <blockquote>"The AI bark detector is unbelievably accurate. No more false alarms."</blockquote>
-    <cite>– David, Austin</cite>
-    <p style="margin-top:1rem; font-weight:600; color:#00EAFF;">Trusted by over 10,000 dog parents worldwide</p>
-  </section>
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-header">
+                <h2>Every Dog Owner's Nightmare</h2>
+                <p>These common behavioral issues can strain your relationship with your furry friend and disrupt your entire household.</p>
+            </div>
 
-  <!-- HOW IT WORKS -->
-  <section class="container" id="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <svg viewBox="0 0 64 64"><!-- Detect icon --></svg>
-        <h4>1. Detect</h4>
-        <p>AI identifies your dog’s barks and whines instantly.</p>
-      </div>
-      <div class="step">
-        <svg viewBox="0 0 64 64"><!-- Calm icon --></svg>
-        <h4>2. Calm</h4>
-        <p>Gentle feedback—sound & vibration—redirects their attention.</p>
-      </div>
-      <div class="step">
-        <svg viewBox="0 0 64 64"><!-- Track icon --></svg>
-        <h4>3. Track</h4>
-        <p>Monitor progress with session logs, photos, and analytics.</p>
-      </div>
-    </div>
-  </section>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon">😰</div>
+                    <h3>Excessive Barking</h3>
+                    <p>Constant barking when left alone, disturbing neighbors and causing stress for both you and your dog.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">💔</div>
+                    <h3>Separation Anxiety</h3>
+                    <p>Your dog becomes destructive, anxious, or depressed when you're not around, making crate time a struggle.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">😴</div>
+                    <h3>Sleepless Nights</h3>
+                    <p>Whining and crying throughout the night disrupts your sleep and your dog's rest cycle.</p>
+                </div>
+            </div>
 
-  <!-- FAQ -->
-  <section class="faq container" id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>How does bark detection work?</summary>
-      <p>Our AI model learns your dog’s unique vocal patterns to filter out noise and only alert on genuine barks.</p>
-    </details>
-    <details>
-      <summary>Is my data private?</summary>
-      <p>Yes—audio recordings and logs are stored locally on your device and never uploaded.</p>
-    </details>
-  </section>
+            <div class="section-header">
+                <h2>CrateQuiet: Your AI-Powered Solution</h2>
+                <p>Transform these challenges into success stories with intelligent, positive reinforcement training.</p>
+            </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 CrateQuiet. All rights reserved.</p>
-    <p>Made with ❤️ for dogs and their humans.</p>
-  </footer>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="icon">🎯</div>
+                    <h3>Smart Bark Detection</h3>
+                    <p>AI learns your dog's unique voice patterns, filtering out false alarms and responding only to genuine barks and whines.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">💝</div>
+                    <h3>Gentle Positive Reinforcement</h3>
+                    <p>Soft sounds and gentle vibrations redirect attention without stress, following proven positive training methods.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Visual dashboards show improvement over time, helping you celebrate wins and adjust training as needed.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon">🔐</div>
+                    <h3>Complete Privacy</h3>
+                    <p>All data stays on your device—no cloud uploads, no privacy concerns, just secure local training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Effective Training</h2>
+                <p>Everything you need to transform your dog's crate experience and build lasting behavioral improvements.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Recognition</h3>
+                    <p>Advanced machine learning algorithms adapt to your dog's unique vocal patterns, ensuring accurate detection while filtering out household noises, other pets, and false triggers.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Customizable Feedback</h3>
+                    <p>Choose from various gentle sounds, nature noises, or calming tones. Adjust vibration intensity to find what works best for your dog's temperament and sensitivity.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Detailed Analytics</h3>
+                    <p>Track session duration, bark frequency, improvement trends, and success rates. Export reports to share with veterinarians or professional trainers.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Intuitive Interface</h3>
+                    <p>Simple, user-friendly design makes setup effortless. Start training in minutes with guided tutorials and helpful tips throughout your journey.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Set training schedules that work with your routine. Automatic session reminders help maintain consistency for faster results.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Achievement System</h3>
+                    <p>Celebrate milestones with built-in achievements. Track quiet time records, consecutive successful sessions, and overall progress improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple. Effective. Science-Based.</h2>
+                <p>CrateQuiet uses proven positive reinforcement techniques enhanced by artificial intelligence for maximum effectiveness.</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Smart Detection</h3>
+                    <p>AI instantly recognizes your dog's barks and whines while learning to ignore background noise, other pets, and household sounds for precise triggering.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Gentle Redirection</h3>
+                    <p>Soft, calming feedback—customizable sounds and gentle vibrations—redirects your dog's attention without causing stress or fear.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Progress Monitoring</h3>
+                    <p>Comprehensive tracking shows improvement over time with detailed analytics, session logs, photos, and exportable progress reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Real Results from Real Dog Parents</h2>
+                <p style="color: #e2e8f0;">Join thousands of satisfied pet owners who've transformed their dogs' behavior with CrateQuiet.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"My Goldendoodle Max used to bark for hours when I left for work. After just one week with CrateQuiet, he's learned to settle quietly in his crate. The AI detection is incredibly accurate—it never triggers on our cat or outside noises!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">E</div>
+                        <div class="author-info">
+                            <h4>Emily Johnson</h4>
+                            <p>Seattle, WA • Goldendoodle Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I was skeptical about app-based training, but CrateQuiet proved me wrong. The progress tracking helped me see exactly when Bella was improving, and the gentle feedback never stressed her out. She now loves her crate time!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h4>David Martinez</h4>
+                            <p>Austin, TX • Rescue Dog Parent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"As a professional dog trainer, I'm impressed by CrateQuiet's approach. The positive reinforcement methods are scientifically sound, and the AI accuracy is remarkable. I now recommend it to all my clients with crate training challenges."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Denver, CO • Certified Dog Trainer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Our neighbors complained about Luna's barking every day. CrateQuiet changed everything in just two weeks. The app's privacy features gave me peace of mind, and the results speak for themselves—complete silence during crate time!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Michael Thompson</h4>
+                            <p>Portland, OR • German Shepherd Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <p style="color: #00d4ff; font-size: 1.2rem; font-weight: 600;">
+                    Trusted by over 10,000 dog parents worldwide
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about CrateQuiet and how it can help your dog.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How does the AI bark detection actually work?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>CrateQuiet uses advanced machine learning algorithms that analyze audio patterns to distinguish your dog's barks and whines from other sounds. During the initial setup, the AI learns your dog's unique vocal characteristics, allowing it to filter out background noise, other pets, traffic, and household sounds. The system continuously improves its accuracy as it learns more about your dog's specific vocalizations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is my dog's data and audio recordings private?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. CrateQuiet processes all audio locally on your iPhone—nothing is uploaded to the cloud or shared with third parties. Your dog's training data, session logs, and any audio samples remain completely private and secure on your device. We believe your pet's privacy is just as important as your own.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Will the feedback sounds or vibrations harm or stress my dog?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. CrateQuiet is designed around positive reinforcement principles used by certified dog trainers. The feedback is gentle and customizable—soft nature sounds, calming tones, or mild vibrations that redirect attention rather than punish. You can adjust the intensity to match your dog's sensitivity level, and the system is designed to calm rather than startle.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How long does it typically take to see results?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most dog owners see noticeable improvement within 3-7 days of consistent use. However, results vary depending on your dog's age, temperament, and the severity of the barking behavior. Puppies and younger dogs often respond faster, while older dogs with established habits may take 2-3 weeks. The app's progress tracking helps you monitor improvement and adjust training as needed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Does CrateQuiet work with all dog breeds and sizes?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! CrateQuiet's AI is trained to recognize vocalizations from dogs of all breeds, sizes, and ages. From tiny Chihuahuas to large Great Danes, the system adapts to each dog's unique vocal patterns. The app includes breed-specific guidance and can be customized for different temperaments and sensitivity levels.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I use CrateQuiet if I have multiple dogs?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, CrateQuiet is optimized for single-dog households to ensure maximum accuracy in bark detection. However, we're developing a multi-dog version that will be able to distinguish between different dogs' vocalizations. If you have multiple dogs, we recommend using separate devices or training one dog at a time for best results.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What if CrateQuiet doesn't work for my dog?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day money-back guarantee because we're confident in CrateQuiet's effectiveness. If you don't see improvement in your dog's crate behavior within 30 days of consistent use, contact our support team for a full refund. We also provide free training consultations to help optimize the app for your specific situation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="signup">
+        <div class="container">
+            <h2>Ready to Transform Your Dog's Crate Experience?</h2>
+            <p>Join thousands of happy dog parents who've discovered the power of AI-enhanced positive reinforcement training.</p>
+            
+            <div class="email-signup">
+                <input type="email" class="email-input" placeholder="Enter your email address" required>
+                <button type="submit" class="signup-button">Start Free Trial</button>
+            </div>
+            
+            <div class="trust-indicators" style="margin-top: 2rem;">
+                <div class="trust-item">
+                    <span>✅</span>
+                    <span>30-Day Money-Back Guarantee</span>
+                </div>
+                <div class="trust-item">
+                    <span>📱</span>
+                    <span>Available on iOS</span>
+                </div>
+                <div class="trust-item">
+                    <span>🆓</span>
+                    <span>Free 7-Day Trial</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">CrateQuiet</div>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <p style="color: #94a3b8;">&copy; 2025 CrateQuiet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't already active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Email signup form handling
+        document.querySelector('.signup-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('.email-input').value;
+            if (email && email.includes('@')) {
+                alert('Thank you for your interest! We\'ll notify you when CrateQuiet is available.');
+                document.querySelector('.email-input').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .solution-card, .step, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
