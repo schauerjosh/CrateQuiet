@@ -44,17 +44,11 @@
     </script>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            color: #e0e0e0; /* Light gray for text */
+            background: #121212; /* Dark background from app */
         }
 
         .container {
@@ -65,13 +59,14 @@
 
         /* Header */
         header {
-            background: rgba(30, 58, 138, 0.95);
+            background: rgba(18, 18, 18, 0.95); /* Darker header with transparency */
             backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             padding: 1rem 0;
+            border-bottom: 1px solid #282828; /* Subtle border */
         }
 
         nav {
@@ -85,7 +80,7 @@
             align-items: center;
             font-size: 1.5rem;
             font-weight: bold;
-            color: #00d4ff;
+            color: #00d4ff; /* App accent color */
             text-decoration: none;
         }
 
@@ -102,7 +97,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #e0e0e0;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
@@ -113,11 +108,11 @@
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
-            color: white;
+            background: #00d4ff; /* App button color */
+            color: #121212; /* Dark text on bright button */
             padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 10px; /* Slightly less rounded than before */
             font-weight: 600;
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -137,6 +132,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            background: #121212; /* Match body background */
         }
 
         .hero-content {
@@ -148,23 +144,20 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff; /* White for main heading */
         }
 
         .hero .subtitle {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #e2e8f0;
+            color: #a0a0a0; /* Lighter gray for subtitle */
             font-weight: 300;
         }
 
         .hero .description {
             font-size: 1.2rem;
             margin-bottom: 2.5rem;
-            color: #cbd5e1;
+            color: #808080; /* Even lighter gray for description */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -179,11 +172,11 @@
         }
 
         .primary-cta {
-            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
-            color: white;
+            background: #00d4ff; /* App button color */
+            color: #121212; /* Dark text on bright button */
             padding: 1rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 10px;
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
@@ -200,10 +193,10 @@
 
         .secondary-cta {
             background: transparent;
-            color: white;
+            color: #00d4ff; /* App accent color for outline */
             padding: 1rem 2rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
+            border: 2px solid #00d4ff;
+            border-radius: 10px;
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
@@ -211,7 +204,7 @@
         }
 
         .secondary-cta:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 212, 255, 0.1);
             border-color: #00d4ff;
         }
 
@@ -228,7 +221,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #e2e8f0;
+            color: #a0a0a0;
             font-size: 0.9rem;
         }
 
@@ -239,13 +232,15 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
+            background: #1e1e1e; /* Slightly lighter dark background for this section */
+            padding: 4rem 0;
         }
 
         .phone-mockup {
-            background: #000;
+            background: #000; /* Black for phone bezel */
             border-radius: 30px;
             padding: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); /* Stronger shadow */
             transform: perspective(1000px) rotateY(-5deg);
             transition: transform 0.3s ease;
         }
@@ -263,9 +258,9 @@
 
         /* Problem/Solution Section */
         .problem-solution {
-            background: white;
+            background: #121212; /* Match body background */
             padding: 80px 0;
-            color: #333;
+            color: #e0e0e0;
         }
 
         .section-header {
@@ -277,12 +272,12 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #1e40af;
+            color: #ffffff; /* White for headings */
         }
 
         .section-header p {
             font-size: 1.2rem;
-            color: #64748b;
+            color: #a0a0a0;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -295,23 +290,25 @@
         }
 
         .problem-card {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
+            background: #1e1e1e; /* Dark card background */
+            border: 1px solid #333333; /* Darker border */
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
+            color: #e0e0e0;
         }
 
         .problem-card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: #ff6b6b; /* Red accent for problems */
         }
 
         .problem-card h3 {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #dc2626;
+            color: #ffffff;
         }
 
         .solution-grid {
@@ -321,35 +318,38 @@
         }
 
         .solution-card {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
+            background: #1e1e1e; /* Dark card background */
+            border: 1px solid #333333; /* Darker border */
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #e0e0e0;
         }
 
         .solution-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.15);
         }
 
         .solution-card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: #00d4ff; /* App accent color for solutions */
         }
 
         .solution-card h3 {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #1e40af;
+            color: #ffffff;
         }
 
         /* Features Section */
         .features {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: #1e1e1e; /* Slightly lighter dark background */
             padding: 80px 0;
+            color: #e0e0e0;
         }
 
         .features-grid {
@@ -360,46 +360,48 @@
         }
 
         .feature-card {
-            background: white;
+            background: #282828; /* Darker card background */
             border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            background: #00d4ff; /* App accent color */
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            color: #121212; /* Dark text on bright icon */
         }
 
         .feature-card h3 {
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #1e40af;
+            color: #ffffff;
         }
 
         .feature-card p {
-            color: #64748b;
+            color: #a0a0a0;
             line-height: 1.7;
         }
 
         /* How It Works */
         .how-it-works {
-            background: white;
+            background: #121212; /* Match body background */
             padding: 80px 0;
+            color: #e0e0e0;
         }
 
         .steps-container {
@@ -417,14 +419,14 @@
         .step-number {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            background: #00d4ff; /* App accent color */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             font-weight: bold;
-            color: white;
+            color: #121212; /* Dark text on bright number */
             margin: 0 auto 1.5rem;
         }
 
@@ -432,19 +434,19 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #1e40af;
+            color: #ffffff;
         }
 
         .step p {
-            color: #64748b;
+            color: #a0a0a0;
             line-height: 1.7;
         }
 
         /* Testimonials */
         .testimonials {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            background: #1e1e1e; /* Slightly lighter dark background */
             padding: 80px 0;
-            color: white;
+            color: #e0e0e0;
         }
 
         .testimonials-grid {
@@ -455,9 +457,9 @@
         }
 
         .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: #282828; /* Darker card background */
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid #333333; /* Darker border */
             border-radius: 20px;
             padding: 2rem;
             transition: transform 0.3s ease;
@@ -489,28 +491,31 @@
         .author-avatar {
             width: 50px;
             height: 50px;
-            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
+            background: #00d4ff; /* App accent color */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
+            color: #121212;
         }
 
         .author-info h4 {
             font-weight: 600;
             margin-bottom: 0.2rem;
+            color: #ffffff;
         }
 
         .author-info p {
-            color: #cbd5e1;
+            color: #a0a0a0;
             font-size: 0.9rem;
         }
 
         /* FAQ Section */
         .faq {
-            background: white;
+            background: #121212; /* Match body background */
             padding: 80px 0;
+            color: #e0e0e0;
         }
 
         .faq-container {
@@ -519,33 +524,34 @@
         }
 
         .faq-item {
-            border: 1px solid #e2e8f0;
+            border: 1px solid #333333; /* Darker border */
             border-radius: 10px;
             margin-bottom: 1rem;
             overflow: hidden;
         }
 
         .faq-question {
-            background: #f8fafc;
+            background: #1e1e1e; /* Darker background for question */
             padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: #1e40af;
+            color: #ffffff;
             transition: background 0.3s ease;
         }
 
         .faq-question:hover {
-            background: #e2e8f0;
+            background: #282828;
         }
 
         .faq-answer {
             padding: 1.5rem;
-            color: #64748b;
+            color: #a0a0a0;
             line-height: 1.7;
             display: none;
+            background: #121212; /* Match body background */
         }
 
         .faq-item.active .faq-answer {
@@ -555,6 +561,7 @@
         .faq-toggle {
             font-size: 1.2rem;
             transition: transform 0.3s ease;
+            color: #00d4ff; /* App accent color */
         }
 
         .faq-item.active .faq-toggle {
@@ -563,22 +570,23 @@
 
         /* CTA Section */
         .final-cta {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            background: #1e1e1e; /* Slightly lighter dark background */
             padding: 80px 0;
             text-align: center;
-            color: white;
+            color: #e0e0e0;
         }
 
         .final-cta h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            color: #ffffff;
         }
 
         .final-cta p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #e2e8f0;
+            color: #a0a0a0;
         }
 
         .email-signup {
@@ -595,17 +603,19 @@
             min-width: 250px;
             padding: 1rem 1.5rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 10px; /* Match other buttons */
             font-size: 1rem;
             outline: none;
+            background: #282828; /* Dark input background */
+            color: #e0e0e0;
         }
 
         .signup-button {
-            background: linear-gradient(45deg, #00d4ff, #0ea5e9);
-            color: white;
+            background: #00d4ff; /* App button color */
+            color: #121212; /* Dark text on bright button */
             padding: 1rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 10px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
@@ -619,10 +629,11 @@
 
         /* Footer */
         footer {
-            background: #0f172a;
-            color: white;
+            background: #000000; /* Pure black for footer */
+            color: #a0a0a0;
             padding: 2rem 0;
             text-align: center;
+            border-top: 1px solid #282828; /* Subtle border */
         }
 
         .footer-content {
@@ -640,7 +651,7 @@
         }
 
         .footer-links a {
-            color: #94a3b8;
+            color: #a0a0a0;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -783,15 +794,15 @@
 
     <!-- App Preview -->
     <section class="app-preview">
-<div class="phone-mockup">
-            <img src="./assets/images/IMG_0197.PNG" alt="CrateQuiet Monitor Screen">
-        </div>
-        <div class="phone-mockup">
-            <img src="./assets/images/IMG_0198.PNG" alt="CrateQuiet Progress Dashboard">
-        </div>
-        <div class="phone-mockup">
-            <img src="./assets/images/IMG_0199.PNG" alt="CrateQuiet Settings Screen">
-        </div>
+                    <div class="phone-mockup">
+                        <img src="assets/images/IMG_0197.PNG" alt="CrateQuiet App Screenshot - Monitoring Screen">
+                    </div>
+                    <div class="phone-mockup">
+                        <img src="assets/images/IMG_0201.PNG" alt="CrateQuiet App Screenshot - Monitoring Active">
+                    </div>
+                    <div class="phone-mockup">
+                        <img src="assets/images/IMG_0202.PNG" alt="CrateQuiet App Screenshot - Bark Detected">
+                    </div>
     </section>
 
     <!-- Problem/Solution Section -->
@@ -862,43 +873,43 @@
                 <div class="feature-card">
                     <div class="feature-icon">🧠</div>
                     <h3>AI-Powered Recognition</h3>
-                    <p>Advanced machine learning algorithms adapt to your dog's unique vocal patterns, ensuring accurate detection while filtering out household noises, other pets, and false triggers.</p>
-                    <img src="./assets/images/IMG_0201.PNG" alt="CrateQuiet Monitoring Active" style="width: 100%; border-radius: 10px; margin-top: 1rem;">
+                    <p>Advanced machine learning algorithms adapt to your dog\"s unique vocal patterns, ensuring accurate detection while filtering out household noises, other pets, and false triggers.</p>
+                    <img src="assets/images/IMG_0201.PNG" alt="CrateQuiet Monitoring Active" class="feature-screenshot">
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🎵</div>
                     <h3>Customizable Feedback</h3>
-                    <p>Choose from various gentle sounds, nature noises, or calming tones. Adjust vibration intensity to find what works best for your dog's temperament and sensitivity.</p>
-                    <img src="./assets/images/IMG_0202.PNG" alt="CrateQuiet Bark Detected" style="width: 100%; border-radius: 10px; margin-top: 1rem;">
+                    <p>Choose from various gentle sounds, nature noises, or calming tones. Adjust vibration intensity to find what works best for your dog\"s temperament and sensitivity.</p>
+                    <img src="assets/images/IMG_0202.PNG" alt="CrateQuiet Bark Detected" class="feature-screenshot">
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📈</div>
                     <h3>Detailed Analytics</h3>
                     <p>Track session duration, bark frequency, improvement trends, and success rates. Export reports to share with veterinarians or professional trainers.</p>
-                    <img src="./assets/images/IMG_0198.PNG" alt="CrateQuiet Progress Dashboard" style="width: 100%; border-radius: 10px; margin-top: 1rem;">
+                    <img src="assets/images/IMG_0198.PNG" alt="CrateQuiet Progress Dashboard" class="feature-screenshot">
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3>Intuitive Interface</h3>
                     <p>Simple, user-friendly design makes setup effortless. Start training in minutes with guided tutorials and helpful tips throughout your journey.</p>
-                    <img src="./assets/images/IMG_0197.PNG" alt="CrateQuiet Monitor Screen" style="width: 100%; border-radius: 10px; margin-top: 1rem;">
+                    <img src="assets/images/IMG_0197.PNG" alt="CrateQuiet Monitor Screen" class="feature-screenshot">
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">⏰</div>
                     <h3>Flexible Scheduling</h3>
                     <p>Set training schedules that work with your routine. Automatic session reminders help maintain consistency for faster results.</p>
-                    <img src="./assets/images/IMG_0199.PNG" alt="CrateQuiet Settings Screen" style="width: 100%; border-radius: 10px; margin-top: 1rem;">
+                    <img src="assets/images/IMG_0199.PNG" alt="CrateQuiet Settings Screen" class="feature-screenshot">
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🏆</div>
                     <h3>Achievement System</h3>
                     <p>Celebrate milestones with built-in achievements. Track quiet time records, consecutive successful sessions, and overall progress improvements.</p>
-                    <img src="./assets/images/IMG_0204.PNG" alt="CrateQuiet Dog Profile" style="width: 100%; border-radius: 10px; margin-top: 1rem;">
+                    <img src="assets/images/IMG_0204.PNG" alt="CrateQuiet Dog Profile" class="feature-screenshot">
                 </div>
             </div>
         </div>
