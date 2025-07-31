@@ -424,7 +424,7 @@ export const [AppProvider, useApp] = createContextHook(() => {
         }
       }, 100); // Faster polling for better responsiveness
 
-      setMonitoringTimer(timer);
+      setMonitoringTimer(timer as unknown as number);
       console.log("Microphone monitoring started successfully with enhanced detection");
     } catch (error) {
       console.error("Failed to start monitoring microphone:", error);
